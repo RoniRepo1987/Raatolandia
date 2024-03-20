@@ -1,0 +1,8 @@
+IGUI_EN = {
+    IGUI_Horde_Event_Trigger_Name = "Trigger Name",
+    IGUI_Horde_Event_Ids = "Horde Event Ids",
+    IGUI_Trigger_Delay = "Trigger Delay",
+    IGUI_Trigger_Rounds = "Trigger Rounds",
+    IGUI_Trigger_Initial_Delay = "Initial Trigger Delay",
+    IGUI_Add = "Add",
+}
