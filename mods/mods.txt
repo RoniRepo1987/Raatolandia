@@ -1,0 +1,3 @@
+Here lies the Raatolandia mods
+Create a new folder for each mod.
+Create a new branch for each folder and merge to main when ready.
