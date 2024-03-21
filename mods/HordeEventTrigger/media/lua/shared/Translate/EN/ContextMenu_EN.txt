@@ -5,6 +5,7 @@ ContextMenu_EN = {
   ContextMenu_Horde_Deactivate_Event_Trigger = "Deactivate Event Trigger",
   ContextMenu_Horde_Activate_All_Event_Trigger = "Activate All Event Triggers",
   ContextMenu_Horde_Deactivate_All_Event_Trigger = "Deactivate All Event Triggers",
+  ContextMenu_Horde_Trigger_Sound_Event = "Trigger Sound Event",
   ContextMenu_Horde_Delete_Event_Trigger = "Delete Event Trigger",
   ContextMenu_Horde_Delete_All_Event_Triggers = "Delete All",
 }

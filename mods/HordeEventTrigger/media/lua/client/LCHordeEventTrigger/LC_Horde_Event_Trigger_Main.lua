@@ -23,6 +23,10 @@ local onDeactivateEventTrigger = function(triggerName, playerObj)
   sendClientCommand(playerObj, "HordeEventTrigger", "DeactivateEventTrigger", args)
 end
 
+local onTriggerSoundEvent = function(square, playerObj)
+  getWorldSoundManager():addSound(nil, square:getX(), square:getY(), square:getZ(), 200, 100)
+end
+
 local onWorldContextMenu = function(player, context, worldobjects, test)
   local isSinglePlayer = getWorld():getGameMode() ~= "Multiplayer"
   if not (isClient() or isSinglePlayer) then return true end
@@ -72,8 +76,8 @@ local onWorldContextMenu = function(player, context, worldobjects, test)
         end
       end
     end
-  
     context:addSubMenu(subMenu, delEventTriggerSubmenu)
+    subMenu:addOption(getText("ContextMenu_Horde_Trigger_Sound_Event"), square, onTriggerSoundEvent, playerObj)
   elseif HordeEventTrigger.modData.trustedUsers and HordeEventTrigger.modData.trustedUsers[playerObj:getUsername()] then
     local hordeEventTriggerOption = context:addOption(getText("ContextMenu_Horde_Event_Trigger"), worldobjects, nil)
     local subMenu = ISContextMenu:getNew(context)
@@ -99,6 +103,8 @@ local onWorldContextMenu = function(player, context, worldobjects, test)
         end
       end
     end
+
+    subMenu:addOption(getText("ContextMenu_Horde_Trigger_Sound_Event"), square, onTriggerSoundEvent, playerObj)
   else
     return true
   end
