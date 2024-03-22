@@ -34,15 +34,14 @@ local onWorldContextMenu = function(player, context, worldobjects, test)
   if not HordeEventTrigger.modData then return true end
 
   local playerObj = getSpecificPlayer(player)
+  local square = nil
+
+  for i,v in ipairs(worldobjects) do
+      square = v:getSquare()
+      break
+  end
 
   if isAdmin() or isSinglePlayer then
-    local square = nil
-
-    for i,v in ipairs(worldobjects) do
-        square = v:getSquare()
-        break
-    end
-
     local hordeEventTriggerOption = context:addOption(getText("ContextMenu_Horde_Event_Trigger"), worldobjects, nil)
     local subMenu = ISContextMenu:getNew(context)
     context:addSubMenu(hordeEventTriggerOption, subMenu)
